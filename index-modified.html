@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="google-site-verification" content="UeYt8xKr3xEgFqE44OEGL541kJ94v5zsLPVk3mvCs1Y" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Think Cloud — 정책연구의 미래</title>
+<meta name="description" content="사회문제 해결을 위한 독립적 정책연구기관" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#111111;
+  --navy-2:#2b2b2b;
+  --gold:#8f8f8f;
+  --ink:#1a1a1a;
+  --gray:#5f5f5f;
+  --bg:#f7f7f7;
+  --line:#e4e4e4;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans KR',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.7;
+}
+h1,h2,h3{font-family:'Noto Serif KR',serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ── 공통 섹션 헤더 ── */
+.sec{padding:88px 0}
+.sec-head{margin-bottom:48px}
+.sec-head .label{
+  display:inline-block;font-size:12px;letter-spacing:.28em;
+  color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:12px;
+}
+.sec-head h2{font-size:32px;font-weight:900;color:var(--navy)}
+.sec-head .bar{width:56px;height:3px;background:var(--gold);margin-top:16px}
+
+/* ── 네비게이션 ── */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:18px}
+.logo .mark{
+  width:32px;height:32px;border-radius:8px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  color:var(--gold);display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Serif KR',serif;font-weight:900;
+}
+.nav ul{display:flex;gap:32px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a:hover{color:var(--gold)}
+.nav .cta{
+  background:var(--navy);color:#fff;padding:8px 18px;border-radius:6px;
+  font-size:14px;font-weight:700;
+}
+.nav .cta:hover{background:var(--navy-2)}
+@media(max-width:760px){.nav ul{display:none}}
+
+/* ── 히어로 / 소개 ── */
+#hero{
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(255,255,255,.09), transparent 60%),
+    linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);
+  color:#fff;padding:110px 0 120px;
+}
+#hero .eyebrow{
+  font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:700;
+  text-transform:uppercase;margin-bottom:20px;
+}
+#hero h1{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.28}
+#hero h1 em{font-style:normal;color:var(--gold)}
+#hero p.sub{
+  margin-top:24px;max-width:620px;color:rgba(255,255,255,.78);font-size:17px;font-weight:300;
+}
+#hero .btns{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:13px 28px;border-radius:6px;font-weight:700;font-size:15px;
+  transition:.2s;
+}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.gold:hover{filter:brightness(1.08)}
+.btn.ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* 소개 하이라이트 */
+#intro{background:var(--white)}
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.intro-card{
+  border:1px solid var(--line);border-radius:12px;padding:32px;background:var(--bg);
+}
+.intro-card .num{font-family:'Noto Serif KR',serif;font-size:34px;font-weight:900;color:var(--navy)}
+.intro-card .num span{font-size:16px;color:var(--gold)}
+.intro-card h3{font-size:17px;margin:6px 0 8px}
+.intro-card p{font-size:14px;color:var(--gray)}
+@media(max-width:760px){.intro-grid{grid-template-columns:1fr}}
+
+/* ── 조직 ── */
+#org{background:var(--bg)}
+.org-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+@media(max-width:860px){.org-wrap{grid-template-columns:1fr}}
+.org-tree{list-style:none;border-left:2px solid var(--line);padding-left:0}
+.org-tree li{position:relative;padding:10px 0 10px 28px}
+.org-tree li::before{
+  content:'';position:absolute;left:-2px;top:24px;width:20px;height:2px;background:var(--line);
+}
+.org-tree .node{
+  display:inline-block;background:var(--white);border:1px solid var(--line);
+  border-radius:8px;padding:10px 18px;font-weight:700;color:var(--navy);font-size:15px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.org-tree .node small{display:block;font-weight:400;color:var(--gray);font-size:12px}
+.org-tree li.root .node{background:var(--navy);color:#fff;border-color:var(--navy)}
+.org-tree li.root .node small{color:var(--gold)}
+.org-desc{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:32px}
+.org-desc h3{font-size:18px;color:var(--navy);margin-bottom:14px}
+.org-desc ul{list-style:none}
+.org-desc li{
+  padding:12px 0;border-bottom:1px dashed var(--line);font-size:15px;
+}
+.org-desc li b{color:var(--navy)}
+.org-desc li:last-child{border-bottom:none}
+
+/* ── 글쓰기 / 게시판 ── */
+#posts{background:var(--white)}
+.board{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:860px){.board{grid-template-columns:.95fr 1.05fr}}
+.write-card,.list-card{
+  background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:28px;
+}
+.write-card h3,.list-card h3{font-size:17px;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.write-card h3::before,.list-card h3::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--gray);margin-bottom:6px}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;
+  font-family:inherit;font-size:14px;background:var(--white);color:var(--ink);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid rgba(0,0,0,.3);border-color:var(--navy)}
+.field textarea{min-height:130px;resize:vertical}
+.write-card .btn{width:100%;border:none;cursor:pointer;font-family:inherit}
+.post-item{
+  background:var(--white);border:1px solid var(--line);border-radius:10px;
+  padding:18px 20px;margin-bottom:12px;
+}
+.post-item .ptop{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.post-item .ptitle{font-weight:700;color:var(--navy);font-size:15px}
+.post-item .pdate{font-size:12px;color:var(--gray);white-space:nowrap}
+.post-item .pbody{font-size:14px;color:var(--gray);margin-top:6px;white-space:pre-wrap;word-break:break-word}
+.post-item .pcat{
+  font-size:11px;font-weight:700;color:var(--gold);border:1px solid var(--gold);
+  border-radius:12px;padding:2px 9px;white-space:nowrap;
+}
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.cat-tab{
+  border:1px solid var(--line);background:var(--white);border-radius:20px;
+  padding:7px 16px;font-size:13px;font-weight:700;color:var(--gray);
+  cursor:pointer;font-family:inherit;transition:.15s;
+}
+.cat-tab:hover{border-color:var(--navy);color:var(--navy)}
+.cat-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat-tab .cnt{color:var(--gray);margin-left:5px}
+.cat-tab.active .cnt{color:#cccccc}
+.post-item .pdel{
+  background:none;border:none;color:#666666;font-size:12px;cursor:pointer;
+  white-space:nowrap;font-family:inherit;text-decoration:underline;
+}
+.empty{font-size:14px;color:var(--gray);text-align:center;padding:36px 0;border:1px dashed var(--line);border-radius:10px}
+.board-note{grid-column:1/-1;font-size:12.5px;color:var(--gray);background:#f2f2f2;border:1px solid #e0e0e0;border-radius:8px;padding:12px 16px}
+
+/* ── 이미지 첨부 ── */
+.img-input{padding:8px 0;font-size:13px}
+.img-preview{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.img-preview .thumb{position:relative;width:76px;height:76px}
+.img-preview .thumb img{width:100%;height:100%;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+.img-preview .thumb .rm{
+  position:absolute;top:2px;right:2px;width:20px;height:20px;border:none;border-radius:50%;
+  background:rgba(0,0,0,.6);color:#fff;font-size:12px;line-height:1;cursor:pointer;
+}
+.img-btn{
+  display:inline-block;padding:9px 16px;border:1px dashed var(--gray);border-radius:8px;
+  font-size:13px;font-weight:700;color:var(--gray);cursor:pointer;
+}
+.img-btn:hover{border-color:var(--navy);color:var(--navy)}
+.intro-upload{margin-top:32px}
+#intro-gallery{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+#intro-gallery .ithumb{position:relative;width:220px;height:150px}
+#intro-gallery .ithumb img{width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+#intro-gallery .ithumb .rm{
+  position:absolute;top:6px;right:6px;width:24px;height:24px;border:none;border-radius:50%;
+  background:rgba(0,0,0,.6);color:#fff;font-size:13px;line-height:1;cursor:pointer;
+}
+.post-item .pgallery{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.post-item .pgallery img{width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+
+/* ── 푸터 ── */
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:48px 0;font-size:13.5px}
+footer .fgrid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#fff}
+footer .copy{margin-top:24px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px}
+</style>
+</head>
+<body>
+
+<!-- ══════════ 상단 내비게이션 ══════════ -->
+<header>
+  <div class="container nav">
+    <a class="logo" href="#hero">Think Cloud<span style="font-size:11px;color:var(--gray);font-weight:400"> THINK TANK</span></a>
+    <ul>
+      <li><a href="#hero">소개</a></li>
+      <li><a href="#org">조직</a></li>
+      <li><a href="#posts">논단·게시판</a></li>
+    </ul>
+    <a class="cta" href="#posts">글 쓰기</a>
+  </div>
+</header>
+
+<!-- ══════════ ① 소개 (히어로) ══════════ -->
+<section id="hero">
+  <div class="container">
+    <h1><em>본질을 꿰뚫다</em></h1>
+    <p class="sub">
+      <!-- ▼ 소개문을 교체하세요 ▼ -->
+      통찰력이 필요한 시대에 필요한 본질
+    </p>
+    <div class="btns">
+      <a class="btn gold" href="#org">조직 소개 보기</a>
+      <a class="btn ghost" href="#posts">연구 논단 읽기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 소개 수치 카드 -->
+<section id="intro" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="label">About Us</span>
+      <h2>저희는 이런 연구기관입니다</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="intro-grid">
+      <!-- ▼ 숫자·문구를 교체하세요 ▼ -->
+      <div class="intro-card">
+        <div class="num" id="stat-posts">0<span>편</span></div>
+        <h3>누적 등록 글</h3>
+        <p></p>
+      </div>
+      <div class="intro-card">
+        <div class="num">2<span>명</span></div>
+        <h3>연구인력</h3>
+        <p></p>
+      </div>
+      <div class="intro-card">
+        <div class="num">12<span>년</span></div>
+        <h3>독립적 연구 전통</h3>
+        <p>정치 경제 역사 철학등 다양한 분야를 연구를 지향합니다</p>
+      </div>
+    </div>
+    <div class="intro-upload">
+      <label class="img-btn" for="intro-img">＋ 소개 이미지 추가</label>
+      <input id="intro-img" type="file" accept="image/*" multiple hidden />
+      <div id="intro-gallery"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ② 조직 소개 ══════════ -->
+<section id="org" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="label">Organization</span>
+      <h2>조직 안내</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="org-wrap">
+      <!-- ▼ 조직도를 교체하세요 ▼ -->
+      <ul class="org-tree">
+        <li class="root"><span class="node">Think Cloud<small>정치 · 역사 · 인문학연구 </small></span></li>
+        <li><span class="node">NAC<small>경제 · 산업연구</small></span></li>
+        <li><span class="node">LAST BATTALION<small>기술 · 정보수집</small></span></li>
+        
+      </ul>
+      <div class="org-desc">
+        <h3>주요 부서 역할</h3>
+        <ul>
+          <li><b>Think Cloud</b> — 정치와 역사 인문학등을 연구하며 사회현상이나 문제들을 연구 해결방안을 모색합니다</li>
+          <li><b>NAC</b> — 다양한 시각에서의 경제 분석을 합니다</li>
+          <li><b>LAST BATTALION</b> — 대외 업무 밑 현장을 기반으로 정보를 수집합니다</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ③ 글쓰기 게시판 ══════════ -->
+<section id="posts" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="label">Columns &amp; Posts</span>
+      <h2>논단 · 게시판</h2>
+      <div class="bar"></div>
+    </div>
+    <div class="board">
+      <div class="write-card">
+        <h3>글 쓰기</h3>
+        <div class="field">
+          <label for="p-title">제목</label>
+          <input id="p-title" type="text" maxlength="120" placeholder="제목을 입력하세요" />
+        </div>
+        <div class="field">
+          <label for="p-cat">분류</label>
+          <select id="p-cat">
+            <option value="연구논단">연구논단</option>
+            <option value="보도자료">보도자료</option>
+            <option value="활동소식">활동소식</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="p-body">내용</label>
+          <textarea id="p-body" placeholder="내용을 입력하세요"></textarea>
+        </div>
+        <div class="field">
+          <label for="p-img">이미지 첨부 (여러 장 가능)</label>
+          <input class="img-input" id="p-img" type="file" accept="image/*" multiple />
+          <div class="img-preview" id="p-img-preview"></div>
+        </div>
+        <button class="btn gold" id="p-submit" type="button">등록하기</button>
+      </div>
+      <div class="list-card">
+        <h3>글 목록</h3>
+        <div class="cat-tabs" id="cat-tabs"></div>
+        <div id="post-list"></div>
+      </div>
+      <p class="board-note">
+        ⓘ 이 게시판은 브라우저 저장소(localStorage)에 글을 저장합니다 — 내 브라우저에서만 글이 유지되며, 다른 방문자에게는 보이지 않습니다.
+        모든 방문자가 글을 남기게 하려면 Vercel Postgres/KV + API 라우트 또는 Giscus(댓글형) 연동이 필요합니다. 자세한 방법은 README를 참고하세요.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 푸터 ══════════ -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div><b>Think Cloud</b></div>
+      <div><b>바로가기</b><br/><a href="#hero">소개</a> · <a href="#org">조직</a> · <a href="#posts">논단</a></div>
+    </div>
+    <div class="copy">© 2026 Think Cloud. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* ── 게시판: localStorage 기반 ──
+   ▼ Vercel 서버 저장소로 올리려면(모든 방문자가 글 쓰기 가능):
+   1) Vercel Postgres(또는 KV) 생성 후 vercel.json 없이 /api/posts.js 라우트를 만들어
+      GET/POST 요청을 DB와 연결하고, 아래 fetch 부분을 해당 API로 교체하면 됩니다.
+   2) 가볍게 가고 싶다면 GitHub Discussions 기반 'Giscus'를 이 섹션에 임베드하세요. */
+const KEY = 'thinktank_posts';
+const listEl = document.getElementById('post-list');
+const tabsEl = document.getElementById('cat-tabs');
+let activeCat = '전체';
+
+/* ── 이미지 첨부 유틸 ── */
+function readAsDataURL(file){
+  return new Promise((res, rej)=>{
+    const r = new FileReader();
+    r.onload = () => res(r.result);
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+}
+function renderImgPreview(pending, box){
+  box.innerHTML = '';
+  pending.forEach((src, i)=>{
+    const d = document.createElement('div'); d.className = 'thumb';
+    const im = document.createElement('img'); im.src = src; im.alt = '미리보기';
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'rm'; b.textContent = '×';
+    b.addEventListener('click', ()=>{ pending.splice(i,1); renderImgPreview(pending, box); });
+    d.append(im, b); box.append(d);
+  });
+}
+
+/* 글쓰기: 이미지 첨부(미리보기 → 등록 시 함께 저장) */
+let pendingImgs = [];
+const imgInput = document.getElementById('p-img');
+const imgPrev = document.getElementById('p-img-preview');
+imgInput.addEventListener('change', async ()=>{
+  for(const f of imgInput.files){
+    try { pendingImgs.push(await readAsDataURL(f)); }
+    catch(e){ alert('이미지를 읽지 못했습니다: ' + f.name); }
+  }
+  imgInput.value = '';
+  renderImgPreview(pendingImgs, imgPrev);
+});
+
+/* 소개: 이미지 추가 시 바로 저장 · 표시 */
+const IKEY = 'thinktank_intro_imgs';
+const introGal = document.getElementById('intro-gallery');
+const introInput = document.getElementById('intro-img');
+let introImgs = (()=>{ try { return JSON.parse(localStorage.getItem(IKEY)) || []; } catch(e){ return []; } })();
+function saveIntro(arr){
+  try { localStorage.setItem(IKEY, JSON.stringify(arr)); }
+  catch(e){ alert('저장 공간(LocalStorage)이 부족합니다. 이미지를 줄이거나 삭제해 주세요.'); }
+}
+function renderIntro(){
+  introGal.innerHTML = '';
+  introImgs.forEach((src, i)=>{
+    const w = document.createElement('div'); w.className = 'ithumb';
+    const im = document.createElement('img'); im.src = src; im.alt = '소개 이미지';
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'rm'; b.textContent = '×'; b.title = '이미지 삭제';
+    b.addEventListener('click', ()=>{
+      if(confirm('이 소개 이미지를 삭제할까요?')){
+        introImgs.splice(i,1); saveIntro(introImgs); renderIntro();
+      }
+    });
+    w.append(im, b); introGal.append(w);
+  });
+}
+introInput.addEventListener('change', async ()=>{
+  for(const f of introInput.files){
+    try { introImgs.push(await readAsDataURL(f)); }
+    catch(e){ alert('이미지를 읽지 못했습니다: ' + f.name); }
+  }
+  introInput.value = '';
+  saveIntro(introImgs);
+  renderIntro();
+});
+renderIntro();
+
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+function save(arr){
+  try { localStorage.setItem(KEY, JSON.stringify(arr)); }
+  catch(e){ alert('저장 공간(LocalStorage)이 부족하여 저장하지 못했습니다. 이미지를 줄이거나 삭제해 주세요.'); throw e; }
+}
+
+function fmt(ts){
+  const d = new Date(ts), p = n => String(n).padStart(2,'0');
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+function catCount(posts, cat){
+  return cat === '전체' ? posts.length : posts.filter(p => (p.cat || '미분류') === cat).length;
+}
+
+function renderTabs(posts){
+  const cats = ['전체', ...new Set(posts.map(p => p.cat || '미분류'))];
+  tabsEl.innerHTML = cats.map(c =>
+    `<button class="cat-tab${c===activeCat?' active':''}" data-cat="${c}" type="button">${c}<span class="cnt">${catCount(posts,c)}</span></button>`
+  ).join('');
+}
+
+tabsEl.addEventListener('click', e=>{
+  const btn = e.target.closest('.cat-tab');
+  if(!btn) return;
+  activeCat = btn.dataset.cat;
+  render();
+});
+
+function render(){
+  const posts = load().sort((a,b)=>b.ts-a.ts);
+
+  /* 상단 누적 카운터를 실제 글 데이터로 갱신 */
+  const statEl = document.getElementById('stat-posts');
+  if(statEl){
+    const n = posts.length;
+    statEl.innerHTML = '';
+    statEl.append(document.createTextNode(String(n)));
+    const unit = document.createElement('span'); unit.textContent = '편';
+    statEl.append(unit);
+  }
+
+  renderTabs(posts);
+
+  const shown = activeCat === '전체' ? posts : posts.filter(p => (p.cat || '미분류') === activeCat);
+  if(!shown.length){
+    listEl.innerHTML = `<div class="empty">${activeCat === '전체' ? '아직 등록된 글이 없습니다.<br/>왼쪽에서 첫 글을 남겨보세요.' : '이 분류의 글이 없습니다.'}</div>`;
+    return;
+  }
+  listEl.innerHTML = shown.map(p=>`
+    <div class="post-item">
+      <div class="ptop">
+        <span class="ptitle"></span>
+        <span class="pcat"></span>
+        <span class="pdate">${fmt(p.ts)}</span>
+      </div>
+      <div class="pbody"></div>
+      <div class="pgallery"></div>
+      <button class="pdel" data-ts="${p.ts}" type="button">삭제</button>
+    </div>`).join('');
+  // XSS 방지: textContent로 안전하게 삽입
+  listEl.querySelectorAll('.post-item').forEach((el,i)=>{
+    el.querySelector('.ptitle').textContent = shown[i].title;
+    el.querySelector('.pcat').textContent = shown[i].cat || '미분류';
+    el.querySelector('.pbody').textContent = shown[i].body;
+    el.querySelector('.pgallery').innerHTML = (shown[i].imgs || []).map(src => `<img src="${src}" alt="첨부 이미지">`).join('');
+  });
+}
+
+document.getElementById('p-submit').addEventListener('click', ()=>{
+  const t = document.getElementById('p-title'), b = document.getElementById('p-body'),
+        c = document.getElementById('p-cat');
+  if(!t.value.trim() || !b.value.trim()){ alert('제목과 내용을 모두 입력하세요.'); return; }
+  const posts = load();
+  posts.push({ ts: Date.now(), title: t.value.trim(), body: b.value.trim(), cat: c.value, imgs: pendingImgs.slice() });
+  try { save(posts); } catch(e){ return; }
+  pendingImgs = []; renderImgPreview(pendingImgs, imgPrev);
+  t.value=''; b.value=''; render();
+});
+
+listEl.addEventListener('click', e=>{
+  if(e.target.classList.contains('pdel')){
+    if(confirm('이 글을 삭제할까요?')){
+      save(load().filter(p=>String(p.ts)!==e.target.dataset.ts));
+      render();
+    }
+  }
+});
+
+render();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
